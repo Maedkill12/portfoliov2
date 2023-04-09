@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { motion } from "framer-motion";
+import Header from "./components/Header";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <Header />
+      <motion.section id="home" key="home" className="scroll-mt-[60px]">
+        <Home />
+      </motion.section>
+      <motion.section id="about" key="about" className="scroll-mt-[60px]">
+        <About />
+      </motion.section>
+      <motion.section id="services" key="services" className="scroll-mt-[60px]">
+        <Services />
+      </motion.section>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
