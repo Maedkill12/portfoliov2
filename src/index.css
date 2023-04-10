@@ -9,7 +9,7 @@ html {
 .project-card {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 142, 5, 0.6) 100%
+    rgba(83, 83, 83, 0.6) 0%,
+    rgba(255, 142, 5, 1) 100%
   );
 }

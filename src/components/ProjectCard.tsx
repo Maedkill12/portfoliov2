@@ -1,5 +1,7 @@
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { useState } from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
+import { urlFor } from "../config/sanity";
 
 const ProjectCard = ({
   title,
@@ -9,7 +11,7 @@ const ProjectCard = ({
 }: {
   title: string;
   description: string;
-  img: string;
+  img: SanityImageSource;
   url: string;
 }) => {
   const [isHover, setIsHover] = useState(false);
@@ -20,7 +22,7 @@ const ProjectCard = ({
       onMouseLeave={() => setIsHover(false)}
     >
       <img
-        src={img}
+        src={urlFor(img).url()}
         alt="Project"
         className={`h-full w-full object-cover absolute transition-all ease-in-out duration-500 ${
           isHover && "scale-110"
@@ -32,7 +34,7 @@ const ProjectCard = ({
         }`}
       >
         <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="flex-1">{description}</p>
+        <p className="flex-1 text-center px-4">{description}</p>
         <a
           href={url}
           target="blank"
