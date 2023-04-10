@@ -1,6 +1,7 @@
 import { useSnapshot } from "valtio";
 
 import state from "../store";
+import Container from "./Container";
 
 const menu = [
   { name: "Home", path: "#home" },
@@ -21,7 +22,7 @@ const Header = () => {
         color: snap.palette.text,
       }}
     >
-      <div className="w-[1280px] mx-auto flex flex-row items-center py-4">
+      <Container customStyle="flex flex-row items-center py-4">
         <div className="flex-1">
           <h1 className="font-bold text-xl">Portfolio.</h1>
         </div>
@@ -39,7 +40,7 @@ const Header = () => {
             </a>
           ))}
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
