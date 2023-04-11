@@ -5,6 +5,8 @@ import ProjectCard from "../components/ProjectCard";
 import { useEffect, useState } from "react";
 import sanityClient from "../config/sanity";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { motion } from "framer-motion";
+import { slideAnimation } from "../config/motion";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState<
@@ -21,7 +23,7 @@ const Portfolio = () => {
   useEffect(() => {
     const getProjects = async () => {
       const projects = await sanityClient.fetch(
-        `*[_type == "project"] [0...8]`
+        `*[_type == "project"] [0...6]`
       );
       setProjects(projects);
     };
@@ -35,10 +37,16 @@ const Portfolio = () => {
       customStyle="h-full sm:h-[calc(100vh-60px)] pb-4 sm:pb-0"
       name="Portfolio"
     >
-      <h2 className="text-center text-5xl font-bold">
+      <motion.h2
+        {...slideAnimation("down")}
+        className="text-center text-5xl font-bold"
+      >
         Latest <span style={{ color: snap.palette.primary }}>Project</span>
-      </h2>
-      <div className="flex flex-row flex-wrap md:justify-between gap-4">
+      </motion.h2>
+      <motion.div
+        {...slideAnimation("up")}
+        className="flex flex-row flex-wrap md:justify-between gap-4"
+      >
         {projects?.map((project) => (
           <ProjectCard
             key={project._id}
@@ -48,7 +56,7 @@ const Portfolio = () => {
             url={project.url}
           />
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 };

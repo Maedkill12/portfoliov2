@@ -5,6 +5,8 @@ import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { slideAnimation } from "../config/motion";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -40,10 +42,19 @@ const Contact = () => {
       customStyle=""
       name="Contact"
     >
-      <h2 className="text-center text-5xl font-bold">
+      <motion.h2
+        {...slideAnimation("down")}
+        className="text-center text-5xl font-bold"
+      >
         Contact <span style={{ color: snap.palette.primary }}>Me!</span>
-      </h2>
-      <form ref={ref} onSubmit={handleSubmit} className="max-w-full">
+      </motion.h2>
+      <p>maed012014@gmail.com</p>
+      <motion.form
+        {...slideAnimation("up")}
+        ref={ref}
+        onSubmit={handleSubmit}
+        className="max-w-full"
+      >
         <div className="max-w-full flex flex-col gap-4 w-[350px] sm:w-[600px]">
           <div className="flex flex-col sm:flex-row gap-4 ">
             <CustomInput
@@ -79,7 +90,7 @@ const Contact = () => {
             <CustomButton title="Send Message" options={{ type: "submit" }} />
           </div>
         </div>
-      </form>
+      </motion.form>
     </Section>
   );
 };

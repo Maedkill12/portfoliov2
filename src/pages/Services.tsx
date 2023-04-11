@@ -20,6 +20,8 @@ import state from "../store";
 import ServiceCard from "../components/ServiceCard";
 import Section from "../components/Section";
 import { Service } from "../config/interfaces";
+import { motion } from "framer-motion";
+import { slideAnimation } from "../config/motion";
 
 const frontendServices: Service[] = [
   { name: "HTML", experience: "5+ years of experience", Icon: AiOutlineHtml5 },
@@ -74,8 +76,16 @@ const Services = () => {
       customStyle=""
       name="Services"
     >
-      <h2 className="text-center text-5xl font-bold">Services</h2>
-      <div className="flex flex-row flex-wrap lg:flex-wrap justify-around gap-4">
+      <motion.h2
+        {...slideAnimation("down")}
+        className="text-center text-5xl font-bold"
+      >
+        Services
+      </motion.h2>
+      <motion.div
+        {...slideAnimation("up")}
+        className="flex flex-row flex-wrap lg:flex-wrap justify-around gap-4"
+      >
         <ServiceCard
           Icon={BsCodeSlash}
           title="Frontend"
@@ -97,7 +107,7 @@ const Services = () => {
           list={mobileServices}
           customStyle="basis-full lg:basis-0"
         />
-      </div>
+      </motion.div>
     </Section>
   );
 };

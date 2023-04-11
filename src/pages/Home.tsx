@@ -3,6 +3,8 @@ import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
 import state from "../store";
 import Section from "../components/Section";
+import { motion } from "framer-motion";
+import { slideAnimation } from "../config/motion";
 
 const socialMedia = [
   {
@@ -27,7 +29,10 @@ const Home = () => {
       customStyle="mt-[60px] "
       name="Home"
     >
-      <div className="flex-1 flex flex-col justify-center">
+      <motion.div
+        className="flex-1 flex flex-col justify-center"
+        {...slideAnimation("down")}
+      >
         <p className="text-3xl font-bold mb-2">Hello, It's Me</p>
         <h2 className="text-5xl font-bold mb-2">Alejandro Elias</h2>
         <p className="text-3xl font-bold mb-5">
@@ -49,7 +54,8 @@ const Home = () => {
             </a>
           ))}
         </div>
-        <a
+        <motion.a
+          whileHover={{ scale: 1.2 }}
           className="w-32 px-1 py-2 rounded-2xl font-bold block"
           style={{
             backgroundColor: snap.palette.primary,
@@ -59,20 +65,32 @@ const Home = () => {
           target="blank"
         >
           Dwonload CV
-        </a>
-      </div>
-      <div className="flex-1 flex flex-col justify-center items-center overflow-hidden">
-        <div
+        </motion.a>
+      </motion.div>
+      <motion.div
+        className="flex-1 flex flex-col justify-center items-center overflow-hidden"
+        {...slideAnimation("up")}
+      >
+        <motion.div
           style={{ backgroundColor: snap.palette.primary }}
-          className="w-[400px] h-[400px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative"
+          className="w-[400px] h-[400px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative shadow-[rgba(255,142,5,1)] shadow-lg"
+          animate={{
+            translateY: [10, 0, 10],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
+            repeat: Infinity,
+          }}
         >
           <img
             src="./photo.webp"
             alt="Alejandro Elias"
             className="absolute bottom-0"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   );
 };

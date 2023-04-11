@@ -33,8 +33,10 @@ const ProjectCard = ({
           isHover ? "top-0" : "top-full"
         }`}
       >
-        <h3 className="text-2xl font-bold">{title}</h3>
-        <p className="flex-1 text-center px-4">{description}</p>
+        <h3 className="text-lg sm:text-2xl font-bold">{title}</h3>
+        <p className="flex-1 text-sm sm:text-base max-h-[calc(100%-70px)] text-center px-4 overflow-hidden">
+          {description}
+        </p>
         <a
           href={url}
           target="blank"

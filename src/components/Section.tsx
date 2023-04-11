@@ -1,6 +1,6 @@
 import { useSnapshot } from "valtio";
 import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
+import { AnimatePresence, useInView } from "framer-motion";
 import state from "../store";
 import Container from "./Container";
 
@@ -20,12 +20,14 @@ const Section = ({
   const snap = useSnapshot(state);
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: "all" });
+  const isInViewOnce = useInView(ref, { amount: "all", once: true });
 
   useEffect(() => {
     if (isInView) {
       state.activeSection = name;
     }
   }, [isInView, name]);
+
   return (
     <div
       ref={ref}
@@ -35,7 +37,11 @@ const Section = ({
         color: snap.palette.text,
       }}
     >
-      <Container customStyle={containerStyle}>{children}</Container>
+      <AnimatePresence>
+        {isInViewOnce && (
+          <Container customStyle={containerStyle}>{children}</Container>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

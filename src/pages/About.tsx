@@ -5,6 +5,8 @@ import Section from "../components/Section";
 import Modal from "../components/Modal";
 import { useState } from "react";
 import Container from "../components/Container";
+import { motion } from "framer-motion";
+import { slideAnimation } from "../config/motion";
 
 const About = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +19,10 @@ const About = () => {
       customStyle=""
       name="About"
     >
-      <div className="w-full sm:w-auto flex flex-col justify-center items-center order-2 md:order-1 overflow-hidden">
+      <motion.div
+        {...slideAnimation("left")}
+        className="w-full sm:w-auto flex flex-col justify-center items-center order-2 md:order-1 overflow-hidden"
+      >
         <div
           style={{ borderColor: snap.palette.primary }}
           className="w-[400px] h-[400px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative border-4"
@@ -28,8 +33,11 @@ const About = () => {
             className="absolute bottom-0"
           />
         </div>
-      </div>
-      <div className="md:flex-1 order-1 md:order-2">
+      </motion.div>
+      <motion.div
+        {...slideAnimation("right")}
+        className="md:flex-1 order-1 md:order-2"
+      >
         <h2 className="text-5xl font-bold">
           About <span style={{ color: snap.palette.primary }}>Me</span>
         </h2>
@@ -70,7 +78,7 @@ const About = () => {
             </p>
           </Container>
         </Modal>
-      </div>
+      </motion.div>
     </Section>
   );
 };
