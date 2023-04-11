@@ -37,11 +37,11 @@ const Home = () => {
             Fullstack Developer
           </span>
         </p>
-        <p className="text-sm text-justify mb-5">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rem
-          accusantium, aliquid hic nam qui iusto quasi repellat repellendus
-          incidunt perferendis impedit vitae laborum porro exercitationem
-          doloremque quisquam. Ratione, quod.
+        <p className="text-base text-justify mb-5">
+          I'm passionate about creating innovative and efficient solutions with
+          web technologies. I have experience in developing web applications
+          with React, TypeScript, Node.js, MongoDB and other tools. I like to
+          learn new things and face new challenges.
         </p>
         <div className="flex flex-row gap-4 mb-5">
           {socialMedia.map((sm) => (
@@ -50,7 +50,7 @@ const Home = () => {
             </a>
           ))}
         </div>
-        <CustomButton title="Download CV" />
+        <CustomButton title="Download CV" options={{}} />
       </div>
       <div className="flex-1 flex flex-col justify-center items-center overflow-hidden">
         <div

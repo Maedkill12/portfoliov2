@@ -2,18 +2,15 @@ import { useSnapshot } from "valtio";
 import state from "../store";
 
 const CustomInput = ({
-  placeholder,
-  type,
+  options,
 }: {
-  placeholder: string;
-  type: string;
+  options: React.InputHTMLAttributes<HTMLInputElement>;
 }) => {
   const snap = useSnapshot(state);
 
   return (
     <input
-      placeholder={placeholder}
-      type={type}
+      {...options}
       className="flex-1 p-3 rounded-xl border-none outline-none"
       style={{ backgroundColor: snap.palette.background }}
     />
