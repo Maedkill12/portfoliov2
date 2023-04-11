@@ -52,7 +52,7 @@ const Contact = () => {
     <Section
       backgroundColor={snap.palette.backgroundHeader}
       containerStyle="h-full flex flex-col pt-[60px] md:pt-0 justify-start md:justify-center items-center gap-4 sm:gap-20"
-      customStyle=""
+      customStyle="h-full sm:h-[calc(100vh-60px)] pb-4 sm:pb-0"
       name="Contact"
     >
       <motion.h2
