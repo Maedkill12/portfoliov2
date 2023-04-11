@@ -7,6 +7,18 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { slideAnimation } from "../config/motion";
+import { toast, ToastContainer } from "react-toastify";
+import { ToastOptions } from "react-toastify/dist/types";
+import { CircleLoader } from "react-spinners";
+import "react-toastify/dist/ReactToastify.css";
+
+const toastOptions: ToastOptions<{}> = {
+  position: "bottom-right",
+  autoClose: 8000,
+  pauseOnHover: true,
+  draggable: true,
+  theme: "dark",
+};
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -26,10 +38,11 @@ const Contact = () => {
         ref?.current ?? "",
         "JbkqNf_m39oVj_Mdh"
       );
-      alert("Message sent");
+      toast.success("Message Sent", toastOptions);
       ref.current?.reset();
     } catch (error) {
       console.log(error);
+      toast.error("Something went error", toastOptions);
     } finally {
       setLoading(false);
     }
@@ -87,10 +100,15 @@ const Contact = () => {
             ></textarea>
           </div>
           <div className="flex flex-row justify-center">
-            <CustomButton title="Send Message" options={{ type: "submit" }} />
+            {loading ? (
+              <CircleLoader color={snap.palette.primary} />
+            ) : (
+              <CustomButton title="Send Message" options={{ type: "submit" }} />
+            )}
           </div>
         </div>
       </motion.form>
+      <ToastContainer />
     </Section>
   );
 };
