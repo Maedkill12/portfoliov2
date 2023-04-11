@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <Section
       backgroundColor={snap.palette.backgroundHeader}
-      containerStyle="h-full flex flex-row"
+      containerStyle="h-full flex flex-col pb-4 md:pb-0 md:flex-row"
       customStyle="mt-[60px] "
       name="Home"
     >
@@ -55,7 +55,7 @@ const Home = () => {
       <div className="flex-1 flex flex-col justify-center items-center overflow-hidden">
         <div
           style={{ backgroundColor: snap.palette.primary }}
-          className="w-[620px] h-[620px] rounded-full flex flex-col items-center justify-center overflow-hidden relative"
+          className="w-[400px] h-[400px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative"
         >
           <img
             src="./photo.webp"

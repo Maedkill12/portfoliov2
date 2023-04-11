@@ -2,14 +2,8 @@ import { useSnapshot } from "valtio";
 
 import state from "../store";
 import Container from "./Container";
-
-const menu = [
-  { name: "Home", path: "#home" },
-  { name: "About", path: "#about" },
-  { name: "Services", path: "#services" },
-  { name: "Portfolio", path: "#portfolio" },
-  { name: "Contact", path: "#contact" },
-];
+import { menu } from "../config/constants";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   const snap = useSnapshot(state);
@@ -22,11 +16,11 @@ const Header = () => {
         color: snap.palette.text,
       }}
     >
-      <Container customStyle="flex flex-row items-center py-4">
+      <Container customStyle="flex flex-row items-center py-4 relative">
         <div className="flex-1">
           <h1 className="font-bold text-xl">Portfolio.</h1>
         </div>
-        <div className="flex flex-row gap-4">
+        <nav className="flex-row gap-4 hidden md:flex">
           {menu.map((item) => (
             <a
               key={item.name}
@@ -39,7 +33,10 @@ const Header = () => {
               {item.name}
             </a>
           ))}
-        </div>
+        </nav>
+        <nav className="block md:hidden">
+          <MobileNav />
+        </nav>
       </Container>
     </div>
   );

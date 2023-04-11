@@ -1,7 +1,11 @@
 import React from "react";
-import { ServiceListProps } from "../config/interfaces";
 import { useSnapshot } from "valtio";
 import state from "../store";
+import { Service } from "../config/interfaces";
+
+interface ServiceListProps {
+  list: Service[];
+}
 
 const ServiceList: React.FC<ServiceListProps> = ({ list }) => {
   const snap = useSnapshot(state);

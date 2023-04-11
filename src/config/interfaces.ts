@@ -6,8 +6,9 @@ interface Service {
   Icon: IconType;
 }
 
-interface ServiceListProps {
-  list: Service[];
+interface Menu {
+  name: string;
+  path: string;
 }
 
-export type { Service, ServiceListProps };
+export type { Service, Menu };

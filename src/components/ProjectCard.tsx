@@ -17,7 +17,7 @@ const ProjectCard = ({
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`w-[300px] h-[300px] rounded-xl overflow-hidden relative`}
+      className={`flex-auto w-[190px] h-[190px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] xl:w-[300px] xl:h-[300px] rounded-xl overflow-hidden relative`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

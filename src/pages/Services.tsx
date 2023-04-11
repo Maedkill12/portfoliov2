@@ -70,29 +70,32 @@ const Services = () => {
   return (
     <Section
       backgroundColor={snap.palette.backgroundHeader}
-      containerStyle="h-full flex flex-col justify-center gap-20"
+      containerStyle="h-full flex flex-col py-[20px] lg:py-0 justifiy-start lg:justify-center gap-4 lg:gap-20"
       customStyle=""
       name="Services"
     >
       <h2 className="text-center text-5xl font-bold">Services</h2>
-      <div className="flex flex-row justify-around gap-4">
+      <div className="flex flex-row flex-wrap lg:flex-wrap justify-around gap-4">
         <ServiceCard
           Icon={BsCodeSlash}
           title="Frontend"
-          description="I create beautiful and responsive websites that adapt to any device and browser. I use the latest technologies and frameworks to ensure your website is fast, secure and user-friendly. Whether you need a landing page, a blog, an e-commerce site or a web app, I can deliver it with quality and style."
+          description="I create beautiful and responsive websites that adapt to any device and browser. I use the latest technologies and frameworks to ensure your website is fast, secure and user-friendly."
           list={frontendServices}
+          customStyle=""
         />
         <ServiceCard
           Icon={BiServer}
           title="Backend"
-          description=" I develop robust and scalable backend solutions that power your website or web app. I use the best practices and tools to ensure your data is secure, reliable and accessible. Whether you need a RESTful API, a database, a cloud service or a serverless function, I can deliver it with efficiency and performance."
+          description=" I develop robust and scalable backend solutions that power your website or web app. I use the best practices and tools to ensure your data is secure, reliable and accessible."
           list={backendServices}
+          customStyle=""
         />
         <ServiceCard
           Icon={AiOutlineMobile}
           title="Mobile development"
-          description="I create stunning and functional mobile apps that run on iOS and Android devices. I use the most popular and cutting-edge technologies and frameworks to ensure your app is compatible, performant and engaging. Whether you need a native app, a hybrid app or a progressive web app, I can deliver it with flair and functionality."
+          description="I create stunning and functional mobile apps that run on iOS and Android devices. I use the most popular and cutting-edge technologies and frameworks to ensure your app is compatible, performant and engaging."
           list={mobileServices}
+          customStyle="basis-full lg:basis-0"
         />
       </div>
     </Section>

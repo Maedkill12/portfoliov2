@@ -31,14 +31,14 @@ const Portfolio = () => {
   return (
     <Section
       backgroundColor={snap.palette.background}
-      containerStyle="h-full flex flex-col justify-center gap-20"
-      customStyle=""
+      containerStyle="h-full flex flex-col pt-[60px] lg:pt-0 justify-start lg:justify-center gap-4 md:gap-20"
+      customStyle="h-full sm:h-[calc(100vh-60px)] pb-4 sm:pb-0"
       name="Portfolio"
     >
       <h2 className="text-center text-5xl font-bold">
         Latest <span style={{ color: snap.palette.primary }}>Project</span>
       </h2>
-      <div className="flex flex-row flex-wrap justify-between gap-4">
+      <div className="flex flex-row flex-wrap md:justify-between gap-4">
         {projects?.map((project) => (
           <ProjectCard
             key={project._id}

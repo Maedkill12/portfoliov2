@@ -13,14 +13,14 @@ const About = () => {
   return (
     <Section
       backgroundColor={snap.palette.background}
-      containerStyle="h-full flex flex-row items-center gap-8"
+      containerStyle="h-full flex flex-col pt-[60px] md:pt-0 md:flex-row jusitfiy-start items-center gap-8"
       customStyle=""
       name="About"
     >
-      <div>
+      <div className="w-full sm:w-auto flex flex-col justify-center items-center order-2 md:order-1 overflow-hidden">
         <div
           style={{ borderColor: snap.palette.primary }}
-          className="w-[620px] h-[620px] rounded-full flex flex-col items-center justify-center overflow-hidden relative border-4"
+          className="w-[400px] h-[400px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative border-4"
         >
           <img
             src="./photo.webp"
@@ -29,7 +29,7 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="flex-1">
+      <div className="md:flex-1 order-1 md:order-2">
         <h2 className="text-5xl font-bold">
           About <span style={{ color: snap.palette.primary }}>Me</span>
         </h2>

@@ -36,16 +36,16 @@ const Contact = () => {
   return (
     <Section
       backgroundColor={snap.palette.backgroundHeader}
-      containerStyle="h-full flex flex-col justify-center items-center gap-20"
+      containerStyle="h-full flex flex-col pt-[60px] md:pt-0 justify-start md:justify-center items-center gap-4 sm:gap-20"
       customStyle=""
       name="Contact"
     >
       <h2 className="text-center text-5xl font-bold">
         Contact <span style={{ color: snap.palette.primary }}>Me!</span>
       </h2>
-      <form ref={ref} onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-4 w-[600px]">
-          <div className="flex flex-row gap-4">
+      <form ref={ref} onSubmit={handleSubmit} className="max-w-full">
+        <div className="max-w-full flex flex-col gap-4 w-[350px] sm:w-[600px]">
+          <div className="flex flex-col sm:flex-row gap-4 ">
             <CustomInput
               options={{ placeholder: "Full Name", type: "text", name: "name" }}
             />

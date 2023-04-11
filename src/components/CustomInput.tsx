@@ -11,7 +11,7 @@ const CustomInput = ({
   return (
     <input
       {...options}
-      className="flex-1 p-3 rounded-xl border-none outline-none"
+      className="max-w-full flex-1 p-3 rounded-xl border-none outline-none"
       style={{ backgroundColor: snap.palette.background }}
     />
   );
