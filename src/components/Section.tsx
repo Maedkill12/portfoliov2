@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import { AnimatePresence, useInView } from "framer-motion";
 import state from "../store";
 import Container from "./Container";
+import useMobile from "../hooks/useMobile";
 
 const Section = ({
   name,
@@ -21,6 +22,7 @@ const Section = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: "all" });
   const isInViewOnce = useInView(ref, { amount: "all", once: true });
+  const { isMobile } = useMobile();
 
   useEffect(() => {
     if (isInView) {
@@ -37,11 +39,16 @@ const Section = ({
         color: snap.palette.text,
       }}
     >
-      <AnimatePresence>
-        {isInViewOnce && (
-          <Container customStyle={containerStyle}>{children}</Container>
-        )}
-      </AnimatePresence>
+      {isMobile && (
+        <Container customStyle={containerStyle}>{children}</Container>
+      )}
+      {!isMobile && (
+        <AnimatePresence>
+          {isInViewOnce && (
+            <Container customStyle={containerStyle}>{children}</Container>
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 };

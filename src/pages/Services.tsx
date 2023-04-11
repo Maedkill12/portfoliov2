@@ -73,7 +73,7 @@ const Services = () => {
     <Section
       backgroundColor={snap.palette.backgroundHeader}
       containerStyle="h-full flex flex-col py-[20px] lg:py-0 justifiy-start lg:justify-center gap-4 lg:gap-20"
-      customStyle=""
+      customStyle="h-full sm:h-[calc(100vh-60px)] pb-4 sm:pb-0"
       name="Services"
     >
       <motion.h2
