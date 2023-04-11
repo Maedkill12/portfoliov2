@@ -2,7 +2,6 @@ import { useSnapshot } from "valtio";
 import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
 import state from "../store";
-import CustomButton from "../components/CustomButton";
 import Section from "../components/Section";
 
 const socialMedia = [
@@ -50,7 +49,17 @@ const Home = () => {
             </a>
           ))}
         </div>
-        <CustomButton title="Download CV" options={{}} />
+        <a
+          className="w-32 px-1 py-2 rounded-2xl font-bold block"
+          style={{
+            backgroundColor: snap.palette.primary,
+            color: snap.palette.backgroundHeader,
+          }}
+          href="https://drive.google.com/file/d/1QEMckABOq0drhzcN_xLKHW66-BFq04YE/view?usp=share_link"
+          target="blank"
+        >
+          Dwonload CV
+        </a>
       </div>
       <div className="flex-1 flex flex-col justify-center items-center overflow-hidden">
         <div
