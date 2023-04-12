@@ -61,7 +61,7 @@ const Home = () => {
             backgroundColor: snap.palette.primary,
             color: snap.palette.backgroundHeader,
           }}
-          href="https://drive.google.com/file/d/1QEMckABOq0drhzcN_xLKHW66-BFq04YE/view?usp=share_link"
+          href="./resume.pdf"
           target="blank"
         >
           Dwonload CV
