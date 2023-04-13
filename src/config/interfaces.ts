@@ -1,3 +1,4 @@
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { IconType } from "react-icons/lib";
 
 interface Service {
@@ -11,4 +12,12 @@ interface Menu {
   path: string;
 }
 
-export type { Service, Menu };
+interface Project {
+  _id: string;
+  name: string;
+  description: string;
+  url: string;
+  image: SanityImageSource;
+}
+
+export type { Service, Menu, Project };

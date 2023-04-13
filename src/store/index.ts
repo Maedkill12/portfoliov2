@@ -1,4 +1,5 @@
 import { proxy } from "valtio";
+import { Project } from "../config/interfaces";
 
 const state = proxy({
   palette: {
@@ -8,6 +9,7 @@ const state = proxy({
     background: "#303747",
   },
   activeSection: "",
+  projects: [] as Project[],
 });
 
 export default state;

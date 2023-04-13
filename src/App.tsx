@@ -5,8 +5,21 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import { useEffect } from "react";
+import sanityClient from "./config/sanity";
+import state from "./store";
 
 function App() {
+  useEffect(() => {
+    const getProjects = async () => {
+      const projects = await sanityClient.fetch(
+        `*[_type == "project"] [0...6]`
+      );
+      state.projects = projects;
+    };
+    getProjects();
+  }, []);
+
   return (
     <div>
       <Header />
