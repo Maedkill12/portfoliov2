@@ -12,9 +12,7 @@ import state from "./store";
 function App() {
   useEffect(() => {
     const getProjects = async () => {
-      const projects = await sanityClient.fetch(
-        `*[_type == "project"] [0...6]`
-      );
+      const projects = await sanityClient.fetch(`*[_type == "project"]`);
       state.projects = projects;
     };
     getProjects();
