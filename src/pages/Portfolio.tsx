@@ -12,7 +12,7 @@ const Portfolio = () => {
     <Section
       backgroundColor={snap.palette.background}
       containerStyle="h-full flex flex-col pt-[60px] lg:pt-0 justify-start lg:justify-center gap-4 md:gap-20"
-      customStyle="h-full sm:h-[calc(100vh-60px)] pb-4 sm:pb-0"
+      customStyle="h-full sm:h-[calc(100vh-60px)] overflow-y-auto pb-4 sm:pb-0"
       name="Portfolio"
     >
       <motion.h2

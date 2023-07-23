@@ -33,7 +33,7 @@ const Section = ({
   return (
     <div
       ref={ref}
-      className={`h-[calc(100vh-60px)] overflow-y-auto ${customStyle}`}
+      className={`h-[calc(100vh-60px)] ${customStyle}`}
       style={{
         backgroundColor: backgroundColor,
         color: snap.palette.text,
