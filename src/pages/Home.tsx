@@ -30,18 +30,18 @@ const Home = () => {
       name="Home"
     >
       <motion.div
-        className="flex-1 flex flex-col justify-center"
+        className="flex flex-col justify-center flex-1"
         {...slideAnimation("down")}
       >
-        <p className="text-3xl font-bold mb-2">Hello, It's Me</p>
-        <h2 className="text-5xl font-bold mb-2">Alejandro Elias</h2>
-        <p className="text-3xl font-bold mb-5">
+        <p className="mb-2 text-3xl font-bold">Hello, It's Me</p>
+        <h2 className="mb-2 text-5xl font-bold">Alejandro Elias</h2>
+        <p className="mb-5 text-3xl font-bold">
           And I'm a{" "}
           <span style={{ color: snap.palette.primary }}>
             Fullstack Developer
           </span>
         </p>
-        <p className="text-base text-justify mb-5">
+        <p className="mb-5 text-base text-justify">
           I'm passionate about creating innovative and efficient solutions with
           web technologies. I have experience in developing web applications
           with React, TypeScript, Node.js, MongoDB and other tools. I like to
@@ -56,7 +56,7 @@ const Home = () => {
         </div>
         <motion.a
           whileHover={{ scale: 1.2 }}
-          className="w-32 px-1 py-2 rounded-2xl font-bold block"
+          className="block w-32 px-1 py-2 font-bold rounded-2xl"
           style={{
             backgroundColor: snap.palette.primary,
             color: snap.palette.backgroundHeader,
@@ -68,12 +68,12 @@ const Home = () => {
         </motion.a>
       </motion.div>
       <motion.div
-        className="flex-1 flex flex-col justify-center items-center overflow-hidden"
+        className="flex flex-col items-center justify-center flex-1 overflow-hidden"
         {...slideAnimation("up")}
       >
         <motion.div
           style={{ backgroundColor: snap.palette.primary }}
-          className="w-[400px] h-[400px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative shadow-[rgba(255,142,5,1)] shadow-lg"
+          className=" md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] xl:w-[550px] xl:h-[550px] rounded-full flex flex-col items-center justify-center overflow-hidden relative shadow-[rgba(255,142,5,1)] shadow-lg"
           animate={{
             translateY: [10, 0, 10],
           }}
@@ -87,7 +87,7 @@ const Home = () => {
           <img
             src="./photo.webp"
             alt="Alejandro Elias"
-            className="absolute bottom-0"
+            className="absolute bottom-0 object-contain"
           />
         </motion.div>
       </motion.div>
